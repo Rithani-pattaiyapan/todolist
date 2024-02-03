@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+
+</head>
+
+<body>
+
+    <div>
+    
+        <input id="int">
+        <button onclick="add_list()">add</button>
+
+    </div>
+
+    <ul id="unorder"></ul>
+    
+</body>
+
+</html>
+
+
+<script>
+
+    var input=document.getElementById("int")
+    var ul=document.getElementById("unorder")
+
+
+    function add_list()
+    {
+       var list=document.createElement("li")
+       list.innerHTML=input.value + "<button onclick='delete_item(event)'>delete</button>"
+       ul.append(list)   
+    }
+
+
+    function delete_item(event)
+    {
+      event.target.parentElement.remove()
+    }
+
+</script>
+
+
+<style>
+
+div{
+    text-align: center;
+}
+
+</style>
+
+
+
